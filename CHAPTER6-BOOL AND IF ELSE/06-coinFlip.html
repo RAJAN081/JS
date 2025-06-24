@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin toss</title>
+</head>
+<body>
+
+    <script>
+let randomNo= Math.random();
+let result;
+const guess = 'heads'
+
+
+if(randomNo>=0 && randomNo<0.5){
+    result = 'heads';
+    console.log(`${result}`);
+}else{
+    result = 'tails';
+}
+if(result === guess){
+    console.log('guess is right');
+}else{
+    console.log('not');
+     console.log(`${result}`);
+}
+
+    </script>
+</body>
+</html>
+
+<!--   const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+      const guess = 'heads';
+      console.log(guess === result ? 'You win!' : 'You lose!'); -->
