@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07</title>
+</head>
+<body>
+    <script>
+
+       
+        function convertToFahrenheit(number){
+            console.log((number*(9/5))+32);
+        
+        }
+        function convertToCelsius(fahrenheit){
+          console.log((fahrenheit-32)*5/9);
+        }
+        function convertTemp(degree,unit){
+            if(unit === 'C'){
+                const result(convertToFahrenheit);
+                return`${result}F`;
+            }else{
+                const result(convertToCelsius);
+                return `${result}C`;
+            }
+        }
+       console.log(convertTemp(25,'C'));
+       console.log(convertTemp(35 , 'F'));
+       
+    </script>
+</body>
+</html>
+
+

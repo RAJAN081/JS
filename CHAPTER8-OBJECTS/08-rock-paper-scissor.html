@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+      playGame('rock');
+    ">Rock</button>
+
+    <button onclick="
+      playGame('paper');
+    ">Paper</button>
+
+    <button onclick="
+      playGame('scissors');
+    ">Scissors</button>
+    <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');// this is used to let the reset button make everything to back to zero . If we do not do this then the value never resets
+    
+    
+    ">
+      
+      
+      Reset button</button>
+
+    <script>
+// we are creating this outside the fxnn as we need to update it if we create it inside it doesnt get updated
+      const score =
+      JSON.parse(localStorage.getItem('score'));// this is used to get the score form the local storage as it is in string form and we need to convert it into the number form we use this  .
+
+      if(score === null){
+        score = {
+          wins:0,
+          losses:0,
+          ties:0
+        };
+      }// this is done because when reset buttons comes into play then values changes to null rather than zero
+
+
+      function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+
+        let result = '';
+
+        if (playerMove === 'scissors') {
+          if (computerMove === 'rock') {
+            result = 'You lose.';
+          } else if (computerMove === 'paper') {
+            result = 'You win.';
+          } else if (computerMove === 'scissors') {
+            result = 'Tie.';
+          }
+
+        } else if (playerMove === 'paper') {
+          if (computerMove === 'rock') {
+            result = 'You win.';
+          } else if (computerMove === 'paper') {
+            result = 'Tie.';
+          } else if (computerMove === 'scissors') {
+            result = 'You lose.';
+          }
+          
+        } else if (playerMove === 'rock') {
+          if (computerMove === 'rock') {
+            result = 'Tie.';
+          } else if (computerMove === 'paper') {
+            result = 'You lose.';
+          } else if (computerMove === 'scissors') {
+            result = 'You win.';
+          }
+        }
+        // updation of score 
+
+        if(result === 'You win.'){
+          score.wins +=1;
+        }else if(result=== 'Tie.'){
+          score.ties +=1;
+
+        }else if(result === 'You lose.'){
+          score.losses +=1;
+        }
+
+        localStorage.getItem('score',JSON.stringify(score));// this will store the score even after we refresh the page again and again (stringify is used to convert number into string as localStorage only deals with strings)
+        //pop up displaying score 
+
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+        Wins : ${score.wins} ,Losses:${score.losses},Ties :${score.ties}`);
+      }
+
+      function pickComputerMove() {
+        const randomNumber = Math.random();
+
+        let computerMove = '';
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = 'rock';
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = 'paper';
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMove = 'scissors';
+        }
+
+        return computerMove;
+      }
+    </script>
+  </body>
+</html>
