@@ -1,0 +1,88 @@
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button  
+   >
+        9a
+    </button>
+    <button  class="js-9b">
+
+
+        9b
+    </button>
+
+    <script>
+       console.log( document.querySelector('button'));
+       document.querySelector('.js-9b')
+       .innerHTML = '9b-done';
+    </script>
+    
+</body>
+</html> 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="js-heads">Heads</button>
+<button class="js-tails">Tails</button>
+
+<p class="js-choice"></p>
+
+<script>
+  function choose(choice) {
+    document.querySelector('.js-choice').innerHTML = `You chose: ${choice}`;
+  }
+
+  document.querySelector('.js-heads')
+    .addEventListener('click', () => choose('heads'));
+
+  document.querySelector('.js-tails')
+    .addEventListener('click', () => choose('tails'));
+</script>
+
+
+   
+</body>
+</html>  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="choices">
+  <button data-choice="heads">Heads</button>
+  <button data-choice="tails">Tails</button>
+</div>
+
+<p class="js-choice"></p>
+
+<script>
+  document.querySelector('.choices')
+    .addEventListener('click', function(event) {
+      if (event.target.tagName === 'BUTTON') {
+        const choice = event.target.dataset.choice;
+        document.querySelector('.js-choice').innerHTML = `You chose: ${choice}`;
+      }
+    });
+</script>
+
+    
+</body>
+</html>

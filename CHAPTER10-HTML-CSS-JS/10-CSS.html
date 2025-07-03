@@ -4,6 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom</title>
+    <style>
+        body {
+    font-family: arial;
+}
+
+        .subscribe-button{
+            border :none;
+            background-color: black;
+            color: white;
+            border-radius: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+
+        }
+        .is-subscribed{
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+        .cost-input{
+            font-size: 15px;
+            padding: 10px;
+        }
+        .calculate-button{
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            padding: 12px 15px;
+            cursor: pointer;
+        }
+
+        
+    </style>
 </head>
 <body>
 
@@ -12,22 +50,24 @@
     </p>
     <button onclick="
     subscribe();
-    "class ="js-subscribe-button"
+    "class ="js-subscribe-button subscribe-button " 
     
 
 
-    >Subscribe</button>
+     >Subscribe</button> <!-- we have given here two classes name one is for js and other one for css -->
 
     <p>
       Amazon shipping  calculator
     </p>
-    <input placeholder="cost of order" class="js-cost-input " onkeydown="
+    <input placeholder="cost of order" class="js-cost-input  cost-input" onkeydown="
       handleCostKeydown(event)">
     <button onclick="
-    calculateTotal()
-    ;
-    ">calculate</button>
-    <p class = "js-total-cost"></p>
+    calculateTotal();
+    
+    
+    
+    " class="calculate-button">calculate</button>
+    <p class = "js-total-cost "></p>
     <script>
 
         String(25)
@@ -65,9 +105,12 @@
 
     if(button.innerText === 'Subscribe'){
         button.innerText = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
 
     }else{
         button.innerText = 'Subscribe';
+        buttonElement.classList.remove(
+        'is-subscribed');
     }
 
         }
