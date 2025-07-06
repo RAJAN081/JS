@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buttons Page</title>
+
+  <style>
+    .button-1-css {
+      background-color: rgb(255, 216, 20);
+      color: black;
+      border-radius: 40px;
+      padding: 10px 40px;
+      border: none;
+    }
+
+    .button-2-css {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .button-3-css {
+      background-color: rgb(230, 230, 230);
+      color: black;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+    }
+
+    .toggle-button {
+      background-color: rgb(230, 230, 230);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-right: 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .is-toggled {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button class="button-1-css">Add to Cart</button>
+  <button class="button-2-css">Request now</button>
+  <button class="button-3-css">Schedule for later</button>
+
+  <button class="toggle-button" onclick="
+    this.classList.toggle('is-toggled');
+  ">Gaming</button>
+   <button class="toggle-button" onclick="
+    this.classList.toggle('is-toggled');
+  ">Music</button>
+   <button class="toggle-button" onclick="
+    this.classList.toggle('is-toggled');
+  ">Tech</button>
+
+</body>
+</html>
