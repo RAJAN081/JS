@@ -1,56 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array</title>
-</head>
-<body>
-
-    <script>
 
 
-function minMax(num){
-    //let min =0; this works fine but whatif all values in array are -ve so that is why we use 
-   
 
-    if(num.length ===0){
-    console.log('min : null');
-    console.log('max : null');
-    }else if (num.length ===1){
-        console.log(`min is ${num}`);
-        console.log(`max is ${num}`);
-    }else{
-         let min = num[0];
-        let max= num[0];
-
-    
-    for(let i=1;i<num.length;i++){
-        if(num[i]<min){
-
-            min = num[i];
-
-        }if(num[i]>max){
-            max= num[i];
-        }
-       }
-       console.log(`min is ${min}`);
-       console.log(`max is ${max}`);
-    }
-}
-
-let num = [4];
-minMax(num);
-             
-       
-    
-      
-        
-       
-    </script>
-    
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,75 +10,18 @@ minMax(num);
 </head>
 <body>
     <script>
-       function countWords(words) {             // 🧠 Define a function that takes an array of words
-    let result = {};                     // 🧺 Create an empty object to store word counts
 
-    for (let word of words) {           // 🔁 Loop through every word in the array
-        if (result[word]) {             // ❓ If word already exists as a key in result
-            result[word]++;             // ➕ Increase its count by 1
-        } else {                        
-            result[word] = 1;           // 🆕 First time seeing this word → set count to 1
+        let arr =['raj','sham','ram','sham'];
+        for(let i=0;i<arr.length;i++){
+            if(arr[i].includes("sham")){
+                continue;
+                console.log(arr[i]);
+                
+            } else{
+                console.log('-1');
+            }
         }
-    }
-
-    return result;                      // 🚀 Return the final object with word counts
-}
-
-let wordArray = ["apple", "grape", "apple", "apple"];
-console.log(countWords(wordArray));      // 👉 Output: { apple: 3, grape: 1 }
-
-
     </script>
     
 </body>
 </html>
-
-//strings and their fxns
-// 👉 Declare a string
-let name = "Raj the Coder";
-
-// -----------------------------
-// 📏 LENGTH - Count characters
-console.log(name.length); // 13
-
-// 🔠 TOUPPERCASE - Make all letters capital
-console.log(name.toUpperCase()); // "RAJ THE CODER"
-
-// 🔡 TOLOWERCASE - Make all letters small
-console.log(name.toLowerCase()); // "raj the coder"
-
-// 🧍 CHARAT - Get a character at specific position
-console.log(name.charAt(0)); // "R"
-
-// 🔍 INCLUDES - Check if string contains another string
-console.log(name.includes("Coder")); // true
-
-// 🔍 INDEXOF - Find index of first match
-console.log(name.indexOf("C")); // 8
-
-// ✂️ SLICE - Cut a piece of string (from, to)
-console.log(name.slice(0, 3)); // "Raj"
-console.log(name.slice(4));    // "the Coder" (from index 4 to end)
-
-// 🔁 REPLACE - Replace part of the string
-let edited = name.replace("Coder", "Legend");
-console.log(edited); // "Raj the Legend"
-
-// ✨ TRIM - Remove spaces from both ends
-let messy = "   I love JS   ";
-console.log(messy.trim()); // "I love JS"
-
-// 🔪 SPLIT - Convert string to array based on separator
-let sentence = "JavaScript is power";
-let words = sentence.split(" "); // Split by space
-console.log(words); // ["JavaScript", "is", "power"]
-
-// 🔗 CONCAT - Join strings together
-let first = "Hello";
-let second = "World";
-let joined = first.concat(" ", second);
-console.log(joined); // "Hello World"
-
-// 💬 TEMPLATE LITERALS - Embed variables in string using backticks ``
-let lang = "JavaScript";
-console.log(`I code in ${lang}`); // "I code in JavaScript"
